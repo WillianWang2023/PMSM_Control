@@ -1,0 +1,46 @@
+Importer Log Report
+Project : LAUNCHXL-F28069_B_1400922.PrjPcb
+
+Section : Analyze Document - E:\01_GitLab\01_Motor_Control\LAUNCHXL-F28069M\HwDevPkg\LAUNCHXL-F28069_B_1400922.brd
+    Analyzing data of E:\01_GitLab\01_Motor_Control\LAUNCHXL-F28069M\HwDevPkg\LAUNCHXL-F28069_B_1400922.brd
+    Load settings
+    Load layers 135
+    Load board
+    Load Library "rcl"
+    Load Packages 4
+    Load Library "ti_trey"
+    Load Packages 2
+    Load Library "con-cypressindustries"
+    Load Packages 1
+    Load Library "texas"
+    Load Packages 2
+    Load Library "led"
+    Load Packages 1
+    Load Library "crystal"
+    Load Packages 2
+    Load Library "jumper"
+    Load Packages 1
+    Load Library "switch"
+    Load Packages 1
+    Load Library "switch-dil"
+    Load Packages 1
+    Load Library "LAUNCHXL-F28027"
+    Load Packages 10
+    Load Library "con-lstb"
+    Load Packages 3
+    Load Library "RF430FRL152H_EVM_a"
+    Load Packages 3
+    Load Library "diode"
+    Load Packages 1
+    Load Library "roy"
+    Load Packages 1
+    Load Library "MSP-EXPG2_Rev.1.3"
+    Load Packages 6
+    Load Library "quad"
+    Load Packages 7
+    ERROR: Unhandled typeerrors
+EndSection
+
+Section : Import Document - E:\01_GitLab\01_Motor_Control\LAUNCHXL-F28069M\HwDevPkg\LAUNCHXL-F28069_B_1400922.brd
+    ERROR: Exception raised! ‘÷ƒ—–‘π ’œ
+EndSection
