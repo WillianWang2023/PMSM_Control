@@ -124,6 +124,13 @@ void main(void)
     // illustrates how to set the GPIO to it's default state.
     //
     // InitGpio();  // Skipped for this example
+    //
+    // For this case just init GPIO pins for ePWM1, ePWM2, ePWM3
+    // These functions are in the F2806x_EPwm.c file
+    //
+    InitEPwm1Gpio();
+    InitEPwm2Gpio();
+    InitEPwm3Gpio();
 
     //
     // Step 3. Clear all interrupts and initialize PIE vector table:
@@ -227,7 +234,7 @@ void main(void)
     IER |= M_INT1;
     IER |= M_INT13;
     IER |= M_INT14;
-    IER |= M_INT3;
+    IER |= M_INT3;                          //Enable CPU int3  which is connected to ePWM1 
 
     //
     // Enable TINT0 in the PIE: Group 1 interrupt 7
@@ -363,7 +370,8 @@ InitEPwmConfig()
     EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;    // Load registers every ZERO
     EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
-    EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   
+    EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;  
+     
 
     //
     // Setup compare
@@ -394,7 +402,18 @@ InitEPwmConfig()
     //
     EPwm1Regs.ETSEL.bit.INTSEL = ET_CTR_ZERO;     // Select INT on Zero event
     EPwm1Regs.ETSEL.bit.INTEN = 1;                // Enable INT
-    EPwm1Regs.ETPS.bit.INTPRD = ET_3RD;           // Generate INT on 3rd event  
+    EPwm1Regs.ETPS.bit.INTPRD = ET_1RD;           // Generate INT on 1rd event 
+    
+    //
+    // Assumes ePWM1 clock is already enabled in InitSysCtrl();
+    //
+    EPwm1Regs.ETSEL.bit.SOCAEN	= 1;		// Enable SOC on A group
+    EPwm1Regs.ETSEL.bit.SOCASEL	= 1;		// Select SOC from CMPA on upcount
+    EPwm1Regs.ETPS.bit.SOCAPRD 	= 1;		// Generate pulse on 1st event
+
+    EPwm1Regs.ETSEL.bit.SOCBEN	= 1;		// Enable SOC on A group
+    EPwm1Regs.ETSEL.bit.SOCBSEL	= 1;		// Select SOC from CMPA on upcount
+    EPwm1Regs.ETPS.bit.SOCBPRD 	= 1;		// Generate pulse on 1st event
 
 //
 // InitEPwm2Example -
@@ -499,6 +518,14 @@ InitEPwmConfig()
     EPwm3Regs.ETSEL.bit.INTEN = 1;                // Enable INT
     EPwm3Regs.ETPS.bit.INTPRD = ET_3RD;           // Generate INT on 3rd event   
 }
+
+
+void
+InitEPwmConfig()
+{
+    
+}
+
     // End of File
 
 
