@@ -1,4 +1,17 @@
 eclipse.preferences.version=1
+encoding//3_Source/main.c=UTF-8
+encoding//Debug/0_CMD/subdir_rules.mk=UTF-8
+encoding//Debug/0_CMD/subdir_vars.mk=UTF-8
+encoding//Debug/1_DSP280x_common/CMD/subdir_rules.mk=UTF-8
+encoding//Debug/1_DSP280x_common/CMD/subdir_vars.mk=UTF-8
+encoding//Debug/1_DSP280x_common/source/subdir_rules.mk=UTF-8
+encoding//Debug/1_DSP280x_common/source/subdir_vars.mk=UTF-8
+encoding//Debug/2_DSP280x_headers/cmd/subdir_rules.mk=UTF-8
+encoding//Debug/2_DSP280x_headers/cmd/subdir_vars.mk=UTF-8
+encoding//Debug/2_DSP280x_headers/source/subdir_rules.mk=UTF-8
+encoding//Debug/2_DSP280x_headers/source/subdir_vars.mk=UTF-8
+encoding//Debug/3_Source/subdir_rules.mk=UTF-8
+encoding//Debug/3_Source/subdir_vars.mk=UTF-8
 encoding//Debug/makefile=UTF-8
 encoding//Debug/objects.mk=UTF-8
 encoding//Debug/sources.mk=UTF-8
