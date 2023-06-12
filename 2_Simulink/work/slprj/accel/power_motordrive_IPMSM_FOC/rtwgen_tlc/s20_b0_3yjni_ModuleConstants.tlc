@@ -1,0 +1,6 @@
+%implements s20_b0_3yjni_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+#define power_motordrive_IPMSM_FOC_period (2.0E-5)
+%endfunction
