@@ -1,0 +1,54 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "F28004x" --package "F28004x_100PZ" --part "F28004x_100PZ" --context "system" --product "C2000WARE@4.03.00.00"
+ * @versions {"tool":"1.16.1+2960"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const epwm  = scripting.addModule("/driverlib/epwm.js", {}, false);
+const epwm1 = epwm.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+epwm1.$name                                             = "myEPWM0";
+epwm1.epwmEventTrigger_enableInterrupt                  = true;
+epwm1.epwmEventTrigger_interruptSource                  = "EPWM_INT_TBCTR_ZERO";
+epwm1.epwmEventTrigger_interruptEventCount              = "1";
+epwm1.epwmEventTrigger_EPWM_SOC_A_triggerEnable         = true;
+epwm1.epwmEventTrigger_EPWM_SOC_A_triggerSource         = "EPWM_SOC_TBCTR_ZERO";
+epwm1.epwmEventTrigger_EPWM_SOC_A_triggerEventPrescalar = "1";
+epwm1.epwmEventTrigger_EPWM_SOC_B_triggerEnable         = true;
+epwm1.epwmEventTrigger_EPWM_SOC_B_triggerSource         = "EPWM_SOC_TBCTR_ZERO";
+epwm1.epwmEventTrigger_EPWM_SOC_B_triggerEventPrescalar = "1";
+
+/**
+ * These are the reserved peripherals and settings in this configuration
+ */
+const iEPWM1              = scripting.addPeripheral("EPWM");
+iEPWM1.$name              = "MyEPWM1";
+iEPWM1.$assign            = "EPWM1";
+iEPWM1["EPWM#_A"].$assign = "GPIO0";
+iEPWM1["EPWM#_B"].$assign = "GPIO1";
+const iEPWM2              = scripting.addPeripheral("EPWM");
+iEPWM2.$name              = "MyEPWM2";
+iEPWM2.$assign            = "EPWM2";
+iEPWM2["EPWM#_A"].$assign = "GPIO2";
+iEPWM2["EPWM#_B"].$assign = "GPIO3";
+const iEPWM3              = scripting.addPeripheral("EPWM");
+iEPWM3.$name              = "MyEPWM3";
+iEPWM3.$assign            = "EPWM3";
+iEPWM3["EPWM#_A"].$assign = "GPIO4";
+iEPWM3["EPWM#_B"].$assign = "GPIO5";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+epwm1.epwm.$suggestSolution           = "EPWM4";
+epwm1.epwm.epwm_aPin.$suggestSolution = "GPIO6";
+epwm1.epwm.epwm_bPin.$suggestSolution = "GPIO7";
